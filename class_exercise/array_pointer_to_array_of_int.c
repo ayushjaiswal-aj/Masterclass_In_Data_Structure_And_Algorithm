@@ -24,7 +24,7 @@ int main(void){
 
     for(i = 0; i < 5; i ++){
         for(j = 0; j < 3; j ++){
-            n = *(*(pp + i) + j);2
+            n = *(*(pp + i) + j);
             printf("n = %d\n", n);
         }
     }
