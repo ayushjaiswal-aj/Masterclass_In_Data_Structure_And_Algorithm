@@ -1,0 +1,18 @@
+p_arr points to dynamically allocated array of 10 elements.
+
+1. input 
+	- old_arr
+	- new_size
+   output
+	- pointer to new array
+	{
+		new_arr = malloc (new_size * T)
+		i = 0
+		while (i < (old_size < new_size ? old_size : new_size))
+		{
+			copy old_arr[i] to new_arr[i]	
+		}
+		free(old_arr)
+		old_arr = null
+		return new_arr;
+	}
