@@ -50,11 +50,10 @@ Vector_int* create_vector_int(){
 
 int add_element(Vector_int *pVecInt, int element){
     pVecInt->nr_elements ++;
-    pVecInt->pIntArray = (int*)realloc(pVecInt->pIntArray, pVecInt->nr_elements);
+    pVecInt->pIntArray = (int*)realloc(pVecInt->pIntArray, pVecInt->nr_elements * sizeof(int));
     assert(pVecInt->pIntArray != NULL);
-    printf("element: %d\n", element);
-    *(pVecInt->pIntArray + (pVecInt->nr_elements - 1)) = element;
-    printf("*(pVecInt->pIntArray + (pVecInt->nr_elements - 1)) = %d\n", *(pVecInt->pIntArray + (pVecInt->nr_elements - 1)));
+    printf("Element: %d\n", element);
+    *(pVecInt->pIntArray + pVecInt->nr_elements - 1) = element;
     return SUCCESS;
 }
 
