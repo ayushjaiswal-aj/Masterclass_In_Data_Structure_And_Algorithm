@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-#define BUFFER 512
-
-char buffer[BUFFER];
+#include <assert.h>
 
 int get_line_count(char *pfName);
 int get_word_count(char *pfName);
@@ -39,6 +36,7 @@ int get_line_count(char *pfName)
     int lineCount = 0;
     FILE *pFile;
     pFile = fopen(pfName, "r");
+    assert(pFile != NULL);
 
     while ((ch = (char)fgetc(pFile)) != EOF)
     {
@@ -58,6 +56,7 @@ int get_word_count(char *pfName)
     int wordCount = 0;
     FILE *pFile;
     pFile = fopen(pfName, "r");
+    assert(pFile != NULL);
 
     while ((ch = fgetc(pFile)) != EOF)
     {
@@ -76,6 +75,7 @@ int get_char_count(char *pfName)
     int charCount = 0;
     FILE *pFile;
     pFile = fopen(pfName, "r");
+    assert(pFile != NULL);
 
     while ((ch = fgetc(pFile)) != EOF)
     {
